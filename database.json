@@ -1,0 +1,10 @@
+{
+  "patients": [
+    {
+      "name": "aya hosny",
+      "age": "22",
+      "gender": "female",
+      "id": 1
+    }
+  ]
+}
