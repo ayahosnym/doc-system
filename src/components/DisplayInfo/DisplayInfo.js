@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Table , Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import './DisplayInfo.less';
+import "./DisplayInfo.less";
 
-function DisplayInfo () {
-
+function DisplayInfo() {
   const [data, setData] = useState([]);
   //this is the url for patients info  here i use it to get data to display it
   const URL = "http://localhost:3000/patients";
@@ -34,33 +34,36 @@ function DisplayInfo () {
   const displayInfo = data.map((patient) => {
     return (
       <tr key={patient.id}>
+        <td>{patient.id}</td>
         <td>{patient.name}</td>
         <td>{patient.age}</td>
         <td>{patient.gender}</td>
         <td>
-          <button onClick={(e) => handleDeletePatient(e, patient.id)}>
-            Delete
-          </button>
+          <Button  className='delete' variant="outline-danger" onClick={(e) => handleDeletePatient(e, patient.id)}>Delete</Button>{' '}
         </td>
         <td>
-          <button onClick={() => handleUpdateInfo(patient.id)}>Update</button>
+          <Button className='update'  variant='outline-dark' onClick={() => handleUpdateInfo(patient.id)}>Update</Button>
         </td>
       </tr>
     );
   });
   return (
     <div>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>age</th>
-          <th>gender</th>
-        </tr>
-        {displayInfo}
-      </table>
+      <Table   striped bordered hover >
+        <thead >
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Delete</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody>{displayInfo}</tbody>
+      </Table>
     </div>
   );
 }
-
 
 export default DisplayInfo;

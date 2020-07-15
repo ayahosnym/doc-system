@@ -1,8 +1,38 @@
 @import "~antd/dist/antd.less";
+@primary-color: #4f2b79;
+@secondary-color: #9c0067;
+@border-radius-5: 5px;
 
-.tt {
-  border: 2px solid green;
+input[type="text"],
+input[type="number"] {
+  width: 20rem;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  border: #dfdede;
+  border-radius: @border-radius-5;
 }
-.btn {
-  background-color: #9c0067;
+input[type="text"]:hover,
+input[type="number"]:hover {
+  border: @primary-color;
+}
+input::placeholder {
+  padding: 10px;
+}
+.submit {
+  // background-color: @main-color;
+  color: white;
+  padding: 5px 40px;
+  border-radius: @border-radius-5;
+  border: none;
+  background: linear-gradient(91deg, #4f2b79,#9c0067);
+  box-shadow: 0 3px 6px rgba(79, 43, 121, 0.37);
+  cursor: pointer;
+}
+
+.alert-error {
+  width: 20rem;
+  margin: auto;
+  height: 37px;
+  margin-bottom: 1rem;
+  line-height: 10px;
 }

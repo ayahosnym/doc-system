@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout} from "antd";
 import AddPatient from './../AddPatient/AddPatient'
 import DisplayInfo from './../DisplayInfo/DisplayInfo'
 import "./MergeDisplayAndAdd.less";
@@ -11,7 +11,7 @@ export default function MergeDisplayAndAdd() {
     <div>
       <Layout>
         <Header className='header'>
-          <div className="logo" />
+          <div className="brand-name" />
           Doctors_System
         </Header>
         {/* body */}
@@ -21,8 +21,7 @@ export default function MergeDisplayAndAdd() {
             <DisplayInfo/>
           </div>
         </Content>
-
-        <Footer className='text-center'>codingBy Aya Hosny</Footer>
+        <Footer className='text-center'>coding By Aya Hosny</Footer>
       </Layout>
     </div>
   );
