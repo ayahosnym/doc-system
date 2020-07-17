@@ -5,15 +5,19 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 export default function GetForm(props) {
-  const { register, handleSubmit, errors } = useForm();
-  const URL = "http://localhost:3000/patients/";
+  const { register, handleSubmit, errors, reset } = useForm();
+  const { URL, axiosMethode, patientId } = props;
   const history = useHistory();
-  const id = props.match.params.id;
+
   const onSubmit = (data) => {
     if (data) {
-      axios.patch(URL + id, data);
+      if (axiosMethode === "post") axios.post(URL, data);
+      reset({});
     }
-    history.push("/");
+    if (axiosMethode === "patch") {
+      axios.patch(URL + patientId, data);
+      history.push("/");
+    }
   };
 
   const validateName = (value) => {
@@ -30,14 +34,14 @@ export default function GetForm(props) {
       <div className="container">
         <div className="row text-center justify-content-center">
           {/*  */}
-          <div className="col-12">
+          <div className="col-12 mb-3">
             <input
               type="text"
               name="name"
               placeholder="name"
               ref={register({
                 required: true,
-                minLength: 5,
+                minLength: 6,
                 validate: validateName,
               })}
             />
@@ -50,7 +54,7 @@ export default function GetForm(props) {
             </div>
           </div>
           {/*  */}
-          <div className="col-12">
+          <div className="col-12 mb-3">
             <input
               type="number"
               name="age"
@@ -72,16 +76,20 @@ export default function GetForm(props) {
               name="gender"
               value="male"
               ref={register({ required: true })}
-              className="p-5"
             />
+            <span className='mr-3'>
             :Male
+
+            </span>
             <input
               type="radio"
               name="gender"
               value="female"
               ref={register({ required: true })}
             />
+            <span>
             :Female
+            </span>
             <div>
               {errors.gender && (
                 <Alert className="alert-error" variant={"danger"}>

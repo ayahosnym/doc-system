@@ -1,10 +1,22 @@
 {
   "patients": [
     {
-      "name": "aya hosny",
-      "age": "33",
+      "name": "Aya Hosny",
+      "age": "77",
       "gender": "female",
       "id": 1
+    },
+    {
+      "name": "aya hosny",
+      "age": "22",
+      "gender": "female",
+      "id": 2
+    },
+    {
+      "name": "dddddddddddddddd",
+      "age": "3",
+      "gender": "male",
+      "id": 3
     }
   ]
 }
