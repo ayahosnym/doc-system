@@ -1,10 +1,13 @@
-@import "~antd/dist/antd.less";
+@import "variables";
 
-@secondary-color: #9c0067;
-
-.update-title {
-  color: @secondary-color;
-}
-.site-layout-background {
+section {
   height: 100vh;
+
+  & header ul li a {
+    color: #4f2b79;
+    font-size: 1.2rem;
+  }
+  .update-title {
+    color: @secondary-color;
+  }
 }

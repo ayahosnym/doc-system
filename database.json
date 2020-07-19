@@ -1,20 +1,20 @@
 {
   "patients": [
     {
-      "name": "Aya Hosny",
-      "age": "77",
+      "name": "aya hosny",
+      "age": "74",
       "gender": "female",
       "id": 1
     },
     {
-      "name": "aya hosny",
+      "name": "Aya Hosny Mohamed",
       "age": "22",
       "gender": "female",
       "id": 2
     },
     {
-      "name": "dddddddddddddddd",
-      "age": "3",
+      "name": "aya Hsony mohamed",
+      "age": "53",
       "gender": "male",
       "id": 3
     }

@@ -1,0 +1,37 @@
+@import "variables";
+@import "common-style";
+
+input[type="text"],
+input[type="number"] {
+  margin-bottom: 0.5rem;
+  border: #dfdede;
+  outline: none;
+  .width-height(20rem, 2.5rem);
+  .border-radius(8px);
+  &:hover,
+  &:active {
+    border: 1px solid #4f2b79;
+  }
+  &::placeholder {
+    padding: 10px;
+  }
+}
+.submit {
+  color: white;
+  padding: 5px 40px;
+  background: linear-gradient(91deg, #4f2b79, #9c0067);
+  box-shadow: 0 3px 6px rgba(79, 43, 121, 0.37);
+  cursor: pointer;
+  .border-radius(8px);
+  .border-none();
+
+  &:hover {
+    box-shadow: 3px 5px 10px rgba(79, 43, 121, 0.37);
+  }
+}
+
+.alert-error {
+  margin: 1rem auto;
+  line-height: 10px;
+  .width-height(15rem,2rem);
+}
