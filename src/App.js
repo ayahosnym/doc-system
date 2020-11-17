@@ -1,18 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import MergeDisplayAndAdd from "./components/MergeDisplayAndAdd/MergeDisplayAndAdd";
+import Axios from "axios";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Update from "./components/Update/Update";
+import Home from "./components/Home/Home";
 import "./App.less";
 
-function App() {
+Axios.defaults.baseURL = "http://localhost:3000";
+
+export default function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/" component={MergeDisplayAndAdd} />
-        <Route path="/update/:id" component={Update} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/update/:id" component={Update} />
+        </Switch>
       </Router>
     </div>
   );
 }
-
-export default App;

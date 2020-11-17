@@ -1,1 +1,1 @@
-export { default } from './DisplayInfo.js';
+export { default } from './DisplayInfo.jsx';

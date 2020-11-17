@@ -1,22 +1,16 @@
 {
-  "patients": [
+  "matches": [
     {
-      "name": "aya hosny",
-      "age": "74",
-      "gender": "female",
+      "homeTeam": "Liverpool",
+      "awayTeam": "Arsenal",
+      "homeTeamScore": "1",
+      "awayTeamScore": "1",
+      "duration": "90",
+      "startTime": "2020-11-20T04:00",
+      "endTime": "2020-11-20T05:30",
+      "league": "English",
+      "isActive": "Yes",
       "id": 1
-    },
-    {
-      "name": "Aya Hosny Mohamed",
-      "age": "22",
-      "gender": "female",
-      "id": 2
-    },
-    {
-      "name": "aya Hsony mohamed",
-      "age": "53",
-      "gender": "male",
-      "id": 3
     }
   ]
 }
